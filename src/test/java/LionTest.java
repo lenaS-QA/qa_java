@@ -11,10 +11,10 @@ import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 
-public class LionTests {
+public class LionTest {
 
     @Mock
-    Feline feline;
+    private Feline feline;
 
     @Test
     public void getKittensCountCorrect() throws Exception {
@@ -33,8 +33,8 @@ public class LionTests {
 
     @Test
     public void getFoodTest() throws Exception {
-        Lion lion = new Lion("Самка", feline);
-        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Lion lion = new Lion("Самец", feline);
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         System.out.println(lion.getFood());
     }
 }
